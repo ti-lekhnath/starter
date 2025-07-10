@@ -1,0 +1,17 @@
+{
+    'name': 'Estate',
+    'version': '1.0',
+    'depends': ['base'],
+    'author': 'Lekhnath',
+    'category': 'Education',
+    'description': """
+        Estate Student Management Module
+    """,
+    'data': [
+        "views/estate_property_views.xml",
+        "security/ir.model.access.csv"
+    ],
+    "license": 'LGPL-3',
+    'installable': True,
+    'application': True,
+}
