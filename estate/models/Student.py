@@ -2,7 +2,7 @@ from odoo import models, fields
 
 
 class Student(models.Model):
-    _name = 'estate.student'
-    _description = 'Student Record'
+    _name = "estate.student"
+    _description = "Student Record"
 
-    name = fields.Char(string='Name', required=True)
+    name = fields.Char(string="Name", required=True)
