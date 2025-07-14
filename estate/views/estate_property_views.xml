@@ -21,11 +21,11 @@
         name="Students"
         parent="estate_menu_root"
         action="action_estate_student"
-        sequence="10"/>
+        sequence="11"/>
 
     <menuitem id="estate_course_menu"
         name="Course"
-        parent="estate_student_menu"
+        parent="estate_menu_root"
         action="action_estate_course"
-        sequence="20"/>
+        sequence="12"/>
 </odoo>
