@@ -5,7 +5,7 @@ class Student(models.Model):
     _name = "estate.student"
     _description = "Student Record"
 
-    profile = fields.Image(string="Profile Image", height=128, width=128)
+    profile = fields.Image(string="Profile Image")
     name = fields.Char(string="Name", required=True)
     score = fields.Float(string="Score", required=True)
     dob = fields.Date(string="Date of Birth", required=True)

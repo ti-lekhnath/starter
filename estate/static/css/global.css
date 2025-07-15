@@ -1,0 +1,17 @@
+.student_form {
+    display: flex;
+    flex-direction: row-reverse;          /* Image will be on the right */
+    justify-content: space-between;       /* Pushes both sections apart */
+    align-items: flex-start;              /* Aligns top edges */
+    gap: 32px;                            /* Optional spacing */
+}
+
+.profile {
+    min-width: 128px;
+}
+
+.student_info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;                         /* Takes remaining space */
+}
