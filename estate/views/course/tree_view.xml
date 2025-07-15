@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_estate_course_tree" model="ir.ui.view">
+        <field name="name">estate.course.tree</field>
+        <field name="model">estate.course</field>
+        <field name="arch" type="xml">
+            <list string="Course List">
+                <field name="string"/>
+                <field name="boolean"/>
+                <field name="decimal"/>
+            </list>
+        </field>
+    </record>
+</odoo>

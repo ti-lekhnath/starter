@@ -22,9 +22,14 @@ class Course(models.Model):
         required=False,
     )
 
-
     # advance
-    # monetary = fields.Monetary(currency_field="us", string="Monetary")
+    currency = fields.Many2one(
+        comodel_name="res.currency",
+        string="Currency",
+        default=lambda self: self.env.company.currency_id,
+    )
+
+    monetary = fields.Monetary(currency_field="currency", string="Monetary")
     # many2one = fields.Many2one()
     # one2many = fields.One2many()
     # many2many = fields.Many2many()
