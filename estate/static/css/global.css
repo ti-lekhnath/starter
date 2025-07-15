@@ -1,9 +1,9 @@
 .student_form {
     display: flex;
-    flex-direction: row-reverse;          /* Image will be on the right */
-    justify-content: space-between;       /* Pushes both sections apart */
-    align-items: flex-start;              /* Aligns top edges */
-    gap: 32px;                            /* Optional spacing */
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 32px;
 }
 
 .profile {
@@ -13,5 +13,5 @@
 .student_info {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;                         /* Takes remaining space */
+    flex-grow: 1;
 }
