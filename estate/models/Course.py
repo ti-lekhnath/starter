@@ -29,6 +29,11 @@ class Course(models.Model):
         default=lambda self: self.env.company.currency_id,
     )
 
+    # student = fields.One2many(
+    #     comodel_name="estate.student",
+    #     inverse_name="course",
+    #     string="Students")
+
     monetary = fields.Monetary(currency_field="currency", string="Monetary")
     # many2one = fields.Many2one()
     # one2many = fields.One2many()
