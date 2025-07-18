@@ -10,7 +10,7 @@ class Student(models.Model):
     score = fields.Float(string="Score", required=True)
     dob = fields.Date(string="Date of Birth", required=True)
     gender = fields.Selection([("Male", "male"), ("Female", "female")])
-    age = fields.Integer(compute="_compute_age", string="Age", store=False)
+    age = fields.Integer(compute="_compute_age", string="Age", store=True)
 
     @api.depends("dob")
     def _compute_age(self):
