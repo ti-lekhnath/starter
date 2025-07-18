@@ -23,3 +23,6 @@ class Student(models.Model):
                 - self.dob.year
                 - ((today.month, today.day) < (self.dob.month, self.dob.day))
             )
+
+    def logger(self):
+        return True

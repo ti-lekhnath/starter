@@ -5,18 +5,20 @@
         <field name="model">estate.student</field>
         <field name="arch" type="xml">
             <form string="Student Form">
-                <div class="student_form">
-                    <div class="profile">
-                        <field name="profile" widget="image" style="height: 128px; width: 128px;"/>
-                    </div>
-                    <div class="student_info">
+                <div class="profile">
+                    <field name="profile" widget="image" style="height: 128px; width: 128px;"/>
+                </div>
+
+                <notebook>
+                    <page string="User Information">
+                        <button name="logger" type="object" string="log something"/>
                         <field name="name"/>
                         <field name="score"/>
                         <field name="dob"/>
                         <field name="gender"/>
                         <field name="age"/>
-                    </div>
-                </div>
+                    </page>
+                </notebook>
             </form>
         </field>
     </record>

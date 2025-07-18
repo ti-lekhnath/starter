@@ -8,10 +8,13 @@
 
 .profile {
     min-width: 128px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.student_info {
+/* .student_info {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-}
+} */

@@ -11,6 +11,8 @@
         "views/course/form_view.xml",
         "views/course/tree_view.xml",
         "views/student/form_view.xml",
+        "views/student/tree_view.xml",
+        "views/student/kanban_view.xml",
         "views/estate_property_views.xml",
         "security/ir.model.access.csv",
     ],
