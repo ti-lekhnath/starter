@@ -17,7 +17,7 @@
                         <field name="dob"/>
                         <field name="gender"/>
                         <field name="age"/>
-                        <field name="course"/>
+                        <field name="group"/>
                     </page>
                 </notebook>
             </form>

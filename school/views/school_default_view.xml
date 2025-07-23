@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="action_school_student" model="ir.actions.act_window">
+        <field name="name">Students</field>
+        <field name="res_model">school.student</field>
+        <field name="view_mode">list,form,kanban</field>
+    </record>
+
+    <record id="action_school_course" model="ir.actions.act_window">
+        <field name="name">Course</field>
+        <field name="res_model">school.course</field>
+        <field name="view_mode">list,form,kanban</field>
+    </record>
+
+    <record id="action_school_teacher" model="ir.actions.act_window">
+        <field name="name">Teacher</field>
+        <field name="res_model">school.teacher</field>
+        <field name="view_mode">list,form,kanban</field>
+    </record>
+
+    <record id="action_school_group" model="ir.actions.act_window">
+        <field name="name">Group</field>
+        <field name="res_model">school.group</field>
+        <field name="view_mode">list,form,kanban</field>
+    </record>
+
+    <menuitem id="school_menu_root"
+        name="School"
+        sequence="10"/>
+
+    <menuitem id="school_student_menu"
+        name="Students"
+        parent="school_menu_root"
+        action="action_school_student"
+        sequence="11"/>
+
+    <menuitem id="school_course_menu"
+        name="Courses"
+        parent="school_menu_root"
+        action="action_school_course"
+        sequence="12"/>
+
+    <menuitem id="school_teacher_menu"
+        name="Teachers"
+        parent="school_menu_root"
+        action="action_school_teacher"
+        sequence="13"/>
+
+    <menuitem id="school_group_menu"
+        name="Groups"
+        parent="school_menu_root"
+        action="action_school_group"
+        sequence="15"/>
+</odoo>

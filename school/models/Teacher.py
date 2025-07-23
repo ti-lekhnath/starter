@@ -6,5 +6,4 @@ class Teacher(models.Model):
     _description = "Teacher Information"
 
     name = fields.Char(string="Teacher Name", required=True)
-    employee_id = fields.Char(string="Employee ID")
-    course_id = fields.Many2one('school.course', string="Course", required=True)
+    course = fields.Many2one('school.course', string="Course", required=True)

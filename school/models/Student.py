@@ -13,7 +13,7 @@ class Student(models.Model):
     dob = fields.Date(string="Date of Birth", required=True)
     roll_number = fields.Char(string="Roll Number")
 
-    course = fields.Many2one('school.course', string="Course", required=True)
+    group = fields.Many2one('school.group', string="Group", required=True)
 
     def calculate_age_from_dob(self):
         if not self.dob:
