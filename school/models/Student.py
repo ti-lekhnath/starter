@@ -1,5 +1,5 @@
 from odoo import api,models, fields
-
+from datetime import date, timedelta
 
 class Student(models.Model):
     _name = "school.student"
@@ -7,7 +7,7 @@ class Student(models.Model):
 
     profile = fields.Image(string="Profile Image")
     name = fields.Char(string="Student Name", required=True)
-    age = fields.Integer(string="Age", compute="_compute_age", store=True)
+    age = fields.Integer(string="Age", compute="_compute_age", inverse="_inverse_age", store=True)
     score = fields.Float(string="Score", required=True)
     gender = fields.Selection([("Male", "male"), ("Female", "female")])
     dob = fields.Date(string="Date of Birth", required=True)
@@ -26,7 +26,20 @@ class Student(models.Model):
                 - ((today.month, today.day) < (self.dob.month, self.dob.day))
             )
 
+
+    def calculate_dob_from_age(self):
+        if not self.age or self.age <= 0:
+            self.dob = False
+        else:
+            today = fields.Date.today()
+            dob = today - timedelta(days=self.age * 365)
+            self.dob = date(dob.year, self.dob.month, self.dob.day)
+
     @api.depends("dob")
     def _compute_age(self):
         for st in self:
             st.calculate_age_from_dob()
+
+    def _inverse_age(self):
+        for st in self:
+            st.calculate_dob_from_age()
