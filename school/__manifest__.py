@@ -8,7 +8,8 @@
         School Management Module
     """,
     "data": [
-        "views/school.xml",
+        "views/school_default_view.xml",
+        "views/student/tree_view.xml",
         "security/ir.model.access.csv"
     ],
     "license": "LGPL-3",
