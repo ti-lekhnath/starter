@@ -9,11 +9,15 @@
                     <field name="profile" widget="image" style="height: 128px; width: 128px;"/>
                 </div>
 
-                <field name="name"/>
-                <field name="score"/>
-                <field name="dob"/>
-                <field name="gender"/>
-                <field name="course"/>
+                <notebook>
+                    <page string="User Information">
+                        <field name="name"/>
+                        <field name="score"/>
+                        <field name="dob"/>
+                        <field name="gender"/>
+                        <field name="course"/>
+                    </page>
+                </notebook>
             </form>
         </field>
     </record>
