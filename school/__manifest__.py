@@ -7,6 +7,9 @@
     "description": """
         School Management Module
     """,
+    "data": [
+        "security/ir.model.access.csv"
+    ],
     "license": "LGPL-3",
     "installable": True,
     "application": True,
