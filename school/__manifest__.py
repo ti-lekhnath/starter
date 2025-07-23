@@ -8,10 +8,16 @@
         School Management Module
     """,
     "data": [
+        "security/ir.model.access.csv",
         "views/school_default_view.xml",
+        "views/student/form_view.xml",
         "views/student/tree_view.xml",
-        "security/ir.model.access.csv"
     ],
+    "assets": {
+        "web.assets_backend": [
+            "school/static/css/global.css",
+        ]
+    },
     "license": "LGPL-3",
     "installable": True,
     "application": True,

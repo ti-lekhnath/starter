@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_school_student_form" model="ir.ui.view">
+        <field name="name">school.student.form</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <form string="Student Form">
+                <div class="profile">
+                    <field name="profile" widget="image" style="height: 128px; width: 128px;"/>
+                </div>
+
+                <field name="name"/>
+                <field name="score"/>
+                <field name="dob"/>
+                <field name="gender"/>
+                <field name="course"/>
+            </form>
+        </field>
+    </record>
+</odoo>
