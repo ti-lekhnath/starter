@@ -13,8 +13,10 @@
                     <page string="User Information">
                         <field name="name"/>
                         <field name="score"/>
+                        <field name="roll_number"/>
                         <field name="dob"/>
                         <field name="gender"/>
+                        <field name="age"/>
                         <field name="course"/>
                     </page>
                 </notebook>
