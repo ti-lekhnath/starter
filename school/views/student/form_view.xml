@@ -5,33 +5,37 @@
         <field name="model">school.student</field>
         <field name="arch" type="xml">
             <form string="Student Form">
-                <group col="2" class="oe_inline">
-                    <group string="" col="1">
-                        <field class="oe_avatar" string="" name="profile" widget="image" style="height: 50%;"/>
-                        <group string="Student information" col="4">
-                            <field name="name"/>
-                            <field name="email"/>
-                            <field name="score"/>
+                <sheet>
+                    <group col="2" class="oe_inline">
+                        <group string="" col="1">
+                            <field class="oe_avatar" string="" name="profile" widget="image"/>
+                            <group string="Student information" col="4">
+                                <field name="name"/>
+                                <field name="email"/>
+                                <field name="score"/>
 
-                            <field name="dob"/>
-                            <field name="gender"/>
-                            <field name="age"/>
+                                <field name="dob"/>
+                                <field name="gender"/>
+                                <field name="age"/>
+                            </group>
+                            <group string="Academic information" col="4">
+                                <field name="score"/>
+                                <field name="group"/>
+                                <field name="roll_number"/>
+                            </group>
                         </group>
-                        <group string="Academic information" col="4">
-                            <field name="score"/>
-                            <field name="group"/>
-                            <field name="roll_number"/>
+
+                        <group>
+                            <notebook>
+                                <page string="User Information">
+                                    <group>
+                                        <field name="group"/>
+                                    </group>
+                                </page>
+                            </notebook>
                         </group>
                     </group>
-
-                    <group>
-
-                    <notebook>
-                        <page string="User Information">
-                    </page>
-                </notebook>
-                    </group>
-                </group>
+                </sheet>
             </form>
         </field>
     </record>
