@@ -20,6 +20,7 @@ class Student(models.Model):
     dob = fields.Date(string="Date of Birth", required=True)
     roll_number = fields.Char(string="Roll Number")
     email = fields.Char(string="Email", required=True)
+    phone = fields.Char(string="Phone")
 
     group = fields.Many2one("school.group", string="Group", required=True)
 
