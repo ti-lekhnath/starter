@@ -12,9 +12,3 @@ class Group(models.Model):
         string="Course",
         required=True,
     )
-
-    teacher = fields.Many2one(
-        comodel_name="school.teacher",
-        string="Teacher",
-        required=True,
-    )

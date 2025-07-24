@@ -24,6 +24,12 @@
         <field name="view_mode">list,form,kanban</field>
     </record>
 
+    <record id="action_school_timing" model="ir.actions.act_window">
+        <field name="name">Timings</field>
+        <field name="res_model">school.timing</field>
+        <field name="view_mode">list,form,kanban</field>
+    </record>
+
     <menuitem id="school_menu_root"
         name="School"
         sequence="10"/>
@@ -50,5 +56,11 @@
         name="Groups"
         parent="school_menu_root"
         action="action_school_group"
+        sequence="14"/>
+
+    <menuitem id="school_timing_menu"
+        name="Timings"
+        parent="school_menu_root"
+        action="action_school_timing"
         sequence="15"/>
 </odoo>
