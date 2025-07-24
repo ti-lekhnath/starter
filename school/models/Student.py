@@ -1,5 +1,6 @@
-from odoo import api,models, fields
+from odoo import api, models, fields
 from datetime import date, timedelta
+
 
 class Student(models.Model):
     _name = "school.student"
@@ -7,14 +8,20 @@ class Student(models.Model):
 
     profile = fields.Image(string="Profile Image")
     name = fields.Char(string="Student Name", required=True)
-    age = fields.Integer(string="Age", compute="_compute_age", inverse="_inverse_age", store=True)
+    age = fields.Integer(
+        string="Age",
+        compute="_compute_age",
+        inverse="_inverse_age",
+        store=True,
+    )
+
     score = fields.Float(string="Score", required=True)
     gender = fields.Selection([("Male", "male"), ("Female", "female")])
     dob = fields.Date(string="Date of Birth", required=True)
     roll_number = fields.Char(string="Roll Number")
     email = fields.Char(string="Email", required=True)
 
-    group = fields.Many2one('school.group', string="Group", required=True)
+    group = fields.Many2one("school.group", string="Group", required=True)
 
     def calculate_age_from_dob(self):
         if not self.dob:
@@ -26,7 +33,6 @@ class Student(models.Model):
                 - self.dob.year
                 - ((today.month, today.day) < (self.dob.month, self.dob.day))
             )
-
 
     def calculate_dob_from_age(self):
         if not self.age or self.age <= 0:

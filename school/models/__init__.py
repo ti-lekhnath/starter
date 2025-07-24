@@ -3,3 +3,4 @@ from . import Student
 from . import Teacher
 from . import Group
 from . import Timing
+from . import Day

@@ -8,3 +8,8 @@ class Course(models.Model):
     name = fields.Char(string="Course Name", required=True)
     is_active = fields.Boolean(string="Is Active?")
     description = fields.Text(string="Description")
+
+    credits = fields.Integer(string="Credits")
+    start_date = fields.Date(string="Start Date")
+    end_date = fields.Date(string="End Date")
+    teacher_ids = fields.Many2many("school.teacher", string="Teachers")
