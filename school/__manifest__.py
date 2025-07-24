@@ -1,7 +1,7 @@
 {
     "name": "School",
     "version": "18.0.1.0",
-    "depends": ["base"],
+    "depends": ["base", "web"],
     "author": "Lekhnath",
     "category": "Education",
     "description": """
@@ -17,6 +17,7 @@
     "assets": {
         "web.assets_backend": [
             "school/static/css/global.css",
+            "school/static/css/style.css",
         ]
     },
     "license": "LGPL-3",

@@ -4,16 +4,25 @@
         <field name="name">school.student.kanban</field>
         <field name="model">school.student</field>
         <field name="arch" type="xml">
-            <kanban string="Student List">
-                <template>
+            <kanban class="student-kanban" string="Student List">
+                <templates>
                     <t t-name="kanban-box">
-                        <div class="oe_kanban_card" style="display: flex; flex-direction: column; align-items: start;">
-                            <field name="name"/>
-                            <field name="gender"/>
-                            <field name="age"/>
+                        <div class="student-card">
+                            <div class="student-image">
+                                <field name="profile" widget="image"/>
+                            </div>
+                            <div class="student-details">
+                                <div class="student-name">
+                                    <field name="name"/>
+                                </div>
+                                <div class="student-meta">
+                                    <span><field name="gender"/></span>
+                                    <span><field name="age"/></span>
+                                </div>
+                            </div>
                         </div>
                     </t>
-                </template>
+                </templates>
             </kanban>
         </field>
     </record>
