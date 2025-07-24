@@ -8,6 +8,9 @@ class Teacher(models.Model):
     name = fields.Char(string="Teacher Name", required=True)
     subject = fields.Char(string="Subject", required=True)
     profile = fields.Binary(string="Profile Image")
+    gender = fields.Selection([("Male", "male"), ("Female", "female")])
+    dob = fields.Date(string="Date of Birth", required=False)
+    age = fields.Integer(string="Age")
 
     email = fields.Char(string="Email")
     phone = fields.Char(string="Phone")

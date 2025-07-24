@@ -1,4 +1,4 @@
-.student-kanban .student-card {
+.kanban .kanban-card {
     display: flex;
     align-items: center;
     padding: 10px;
@@ -8,7 +8,7 @@
     margin: 5px;
 }
 
-.student-kanban .student-image img {
+.kanban .kanban-image img {
     width: 64px;
     height: 64px;
     object-fit: cover;
@@ -17,19 +17,19 @@
     margin-right: 12px;
 }
 
-.student-kanban .student-details {
+.kanban .kanban-details {
     display: flex;
     flex-direction: column;
     gap: 4px;
 }
 
-.student-kanban .student-name {
+.kanban .kanban-name {
     font-weight: 600;
     font-size: 16px;
     color: #333;
 }
 
-.student-kanban .student-meta span {
+.kanban .kanban-meta span {
     display: inline-block;
     margin-right: 10px;
     font-size: 13px;

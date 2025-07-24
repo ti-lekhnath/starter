@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <record id="view_school_student_kanban" model="ir.ui.view">
-        <field name="name">school.student.kanban</field>
-        <field name="model">school.student</field>
+    <record id="view_school_teacher_kanban" model="ir.ui.view">
+        <field name="name">school.teacher.kanban</field>
+        <field name="model">school.teacher</field>
         <field name="arch" type="xml">
-            <kanban class="kanban" string="Student List">
+            <kanban class="kanban" string="Teacher List">
                 <templates>
                     <t t-name="kanban-box">
                         <div class="kanban-card">
