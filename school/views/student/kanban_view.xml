@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_estate_student_kanban" model="ir.ui.view">
+        <field name="name">estate.student.kanban</field>
+        <field name="model">estate.student</field>
+        <field name="arch" type="xml">
+            <kanban string="Student List">
+                <template>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_card" style="display: flex; flex-direction: column; align-items: start;">
+                            <field name="name"/>
+                            <field name="gender"/>
+                            <field name="age"/>
+                        </div>
+                    </t>
+                </template>
+            </kanban>
+        </field>
+    </record>
+</odoo>

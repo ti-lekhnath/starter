@@ -12,6 +12,7 @@
         "views/school_default_view.xml",
         "views/student/form_view.xml",
         "views/student/tree_view.xml",
+        "views/student/kanban_view.xml"
     ],
     "assets": {
         "web.assets_backend": [
