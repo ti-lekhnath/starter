@@ -15,8 +15,8 @@
                                 <field name="phone" widget="phone"/>
                                 <field name="score"/>
 
-                                <field name="dob"/>
-                                <field name="gender"/>
+                                <field name="dob" widget="date"/>
+                                <field name="gender" widget="selection_badge"/>
                                 <field name="age"/>
                             </group>
                             <group string="Academic information" col="4">

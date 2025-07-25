@@ -12,4 +12,3 @@ class Course(models.Model):
     credits = fields.Integer(string="Credits")
     start_date = fields.Date(string="Start Date")
     end_date = fields.Date(string="End Date")
-    teacher_ids = fields.Many2many("school.teacher", string="Teachers")
