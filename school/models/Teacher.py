@@ -15,3 +15,5 @@ class Teacher(models.Model):
     email = fields.Char(string="Email")
     phone = fields.Char(string="Phone")
     joined_at = fields.Date(string="Joining Date")
+
+    partner_id = fields.Many2one("res.partner", string="Address")

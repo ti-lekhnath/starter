@@ -22,6 +22,9 @@
                                 <field name="subject"/>
                                 <field name="joined_at"/>
                             </group>
+                            <group string="Contact information" col="4">
+                                <field name="partner_id" context="{'show_address': 1}"/>
+                            </group>
                         </group>
 
                         <group>
