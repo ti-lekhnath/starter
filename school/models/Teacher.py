@@ -16,4 +16,10 @@ class Teacher(models.Model):
     phone = fields.Char(string="Phone")
     joined_at = fields.Date(string="Joining Date")
 
+    timing_ids = fields.One2many(
+        comodel_name="school.timing",
+        inverse_name="teacher",
+        string="Timings",
+    )
+
     partner_id = fields.Many2one("res.partner", string="Address")

@@ -29,6 +29,17 @@
 
                         <group>
                             <notebook>
+                                <page string="Timings">
+                                    <field name="timing_ids">
+                                        <list create="false" delete="false">
+                                            <field name="group"/>
+                                            <field string="From" name="start_time"/>
+                                            <field string="To" name="end_time"/>
+                                            <field name="days" widget="many2many_tags"/>
+                                        </list>
+                                    </field>
+                                </page>
+
                                 <page string="Others">
                                     <group>
                                     </group>
