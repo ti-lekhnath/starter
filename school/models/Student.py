@@ -23,6 +23,16 @@ class Student(models.Model):
     phone = fields.Char(string="Phone")
 
     group = fields.Many2one("school.group", string="Group", required=True)
+    status = fields.Selection(
+        [
+            ("unknown", "Unknown"),
+            ("enrolled", "Enrolled"),
+            ("graduated", "Graduated"),
+            ("dropped", "Dropped"),
+        ],
+        string="Unknown"
+    )
+
 
     def calculate_age_from_dob(self):
         if not self.dob:
@@ -43,6 +53,10 @@ class Student(models.Model):
             dob = today - timedelta(days=self.age * 365)
             self.dob = date(dob.year, self.dob.month, self.dob.day)
 
+    def check_status_validity(self):
+        self.status = self.env.context["student_status"]
+        return self
+
     @api.depends("dob")
     def _compute_age(self):
         for st in self:
@@ -51,3 +65,10 @@ class Student(models.Model):
     def _inverse_age(self):
         for st in self:
             st.calculate_dob_from_age()
+
+    @api.model
+    def write(self, vals):
+        if status := vals.get("status"):
+            ...
+            # self.check_status_validity(status)
+        return super().write(vals)

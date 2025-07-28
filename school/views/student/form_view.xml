@@ -5,6 +5,27 @@
         <field name="model">school.student</field>
         <field name="arch" type="xml">
             <form string="Student Form">
+                <header>
+                    <button type="object"
+                            invisible="status not in ('unknown')"
+                            context="{'student_status': 'enrolled'}"
+                            name="check_status_validity"
+                            string="Enrolled"/>
+
+                    <button type="object"
+                            invisible="status not in ('unknown','enrolled')"
+                            context="{'student_status': 'graduated'}"
+                            name="check_status_validity"
+                            string="Graduated"/>
+
+                    <button type="object"
+                            invisible="status not in ('unknown','enrolled')"
+                            context="{'student_status': 'dropped'}"
+                            name="check_status_validity"
+                            string="Dropped"/>
+
+                    <field name="status" widget="statusbar"/>
+                </header>
                 <sheet>
                     <group col="2" class="oe_inline">
                         <group string="" col="1">
