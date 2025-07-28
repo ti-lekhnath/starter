@@ -17,6 +17,8 @@
         "views/timings/tree_view.xml",
         "views/timings/form_view.xml",
         "views/group/tree_view.xml",
+        "views/course/tree_view.xml",
+        "views/course/form_view.xml",
         "views/student/kanban_view.xml",
     ],
     "assets": {

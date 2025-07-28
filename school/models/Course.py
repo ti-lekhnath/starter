@@ -12,3 +12,5 @@ class Course(models.Model):
     credits = fields.Integer(string="Credits")
     start_date = fields.Date(string="Start Date")
     end_date = fields.Date(string="End Date")
+
+    group_ids = fields.One2many("school.group", "course", string="Groups")
