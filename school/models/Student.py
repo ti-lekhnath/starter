@@ -22,6 +22,12 @@ class Student(models.Model):
     email = fields.Char(string="Email", required=True)
     phone = fields.Char(string="Phone")
 
+    teacher_ids = fields.Many2many(
+        comodel_name="school.teacher",
+        string="Teachers",
+        compute="_compute_teachers_for_student",
+    )
+
     group = fields.Many2one("school.group", string="Group", required=True)
     status = fields.Selection(
         [
@@ -30,9 +36,17 @@ class Student(models.Model):
             ("graduated", "Graduated"),
             ("dropped", "Dropped"),
         ],
-        string="Unknown"
+        string="Unknown",
     )
 
+    @api.depends("group")
+    def _compute_teachers_for_student(self):
+        for student in self:
+            student.teacher_ids = (
+                self.env["school.timing"]
+                .search([("group", "=", student.group.id)])
+                .mapped("teacher")
+            )
 
     def calculate_age_from_dob(self):
         if not self.dob:

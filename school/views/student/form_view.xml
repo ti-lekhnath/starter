@@ -49,10 +49,14 @@
 
                         <group>
                             <notebook>
-                                <page string="Others">
-                                    <group>
-                                        <field name="group"/>
-                                    </group>
+                                <page string="Teachers">
+                                    <field name="teacher_ids">
+                                        <list create="false" delete="false">
+                                            <field name="name"/>
+                                            <field name="gender"/>
+                                            <field name="email"/>
+                                        </list>
+                                    </field>
                                 </page>
                             </notebook>
                         </group>
