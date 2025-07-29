@@ -72,3 +72,6 @@ class Student(models.Model):
             ...
             # self.check_status_validity(status)
         return super().write(vals)
+
+    def hello(self):
+        return "Hello, I am a student!"

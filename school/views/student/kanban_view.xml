@@ -26,4 +26,17 @@
             </kanban>
         </field>
     </record>
+
+    <!-- Search View for Students with Gender Filters -->
+    <record id="view_school_student_search" model="ir.ui.view">
+        <field name="name">school.student.search</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <search string="Student Search">
+                <filter name="filter_male" string="Only Male Students" domain="[('gender', '=', 'Male')]"/>
+                <filter name="filter_female" string="Only Female Students" domain="[('gender', '=', 'Female')]"/>
+                <filter name="filter_all" string="All Students" domain="[]"/>
+            </search>
+        </field>
+    </record>
 </odoo>
