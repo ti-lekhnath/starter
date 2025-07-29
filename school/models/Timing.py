@@ -16,3 +16,26 @@ class Timing(models.Model):
     end_time = fields.Float(string="End Time")
 
     days = fields.Many2many("school.day", string="Days")
+
+
+    def open_group_timing(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Groups',
+            'res_model': 'school.group',
+            'view_mode': 'list',
+            'view_id': self.env.ref('school.view_school_group_tree').id,
+            'target': 'new',
+            'context': {'create': False, 'update': False},
+        }
+
+    def open_teacher_timing(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Teachers',
+            'res_model': 'school.teacher',
+            'view_mode': 'kanban',
+            'view_id': self.env.ref('shool.view_school_teacher_kanban').id,
+            'target': 'new',
+            'context': {'create': False, 'update': False},
+        }
