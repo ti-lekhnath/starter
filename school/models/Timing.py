@@ -34,7 +34,7 @@ class Timing(models.Model):
             "name": "Teachers",
             "res_model": "school.teacher",
             "view_mode": "kanban",
-            "view_id": self.env.ref("shool.view_school_teacher_kanban").id,
+            "view_id": self.env.ref("school.view_school_teacher_kanban").id,
             "target": "new",
             "context": {"create": False, "update": False},
         }
