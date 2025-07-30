@@ -27,7 +27,7 @@
                     <field name="status" widget="statusbar"/>
                 </header>
                 <sheet>
-                    <group col="2" class="oe_inline">
+                    <group col="1" class="oe_inline">
                         <group string="" col="1">
                             <field class="oe_avatar" string="" name="profile" widget="image"/>
                             <group string="Student information" col="4">
