@@ -14,3 +14,7 @@ class Course(models.Model):
     end_date = fields.Date(string="End Date")
 
     group_ids = fields.One2many("school.group", "course", string="Groups")
+
+    def unlink(self):
+        print("hi")
+        # return super().unlink()

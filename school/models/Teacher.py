@@ -53,5 +53,8 @@ class Teacher(models.Model):
     def _compute_teacher_timings(self):
         for teacher in self:
             teacher.timing_ids = (
-                self.env["school.timing"].search([("teacher", "=", teacher.id)]).ids
+                self.env["school.timing"]
+                .search([("teacher", "=", teacher.id)])
+                .sorted("start_time", reverse=False)
+                .ids
             )

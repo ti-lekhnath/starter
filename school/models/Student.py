@@ -45,6 +45,7 @@ class Student(models.Model):
             student.teacher_ids = (
                 self.env["school.timing"]
                 .search([("group", "=", student.group.id)])
+                .sorted("start_time", reverse=False)
                 .mapped("teacher")
             )
 
