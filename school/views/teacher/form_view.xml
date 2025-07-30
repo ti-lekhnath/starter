@@ -29,6 +29,17 @@
 
                         <group>
                             <notebook>
+                                <page string="Students">
+                                    <field name="student_ids">
+                                        <list create="false" delete="false">
+                                            <field name="group"/>
+                                            <field name="name"/>
+                                            <field name="gender"/>
+                                            <field name="email"/>
+                                        </list>
+                                    </field>
+                                </page>
+
                                 <page string="Timings">
                                     <field name="timing_ids">
                                         <list create="false" delete="false">
@@ -38,11 +49,6 @@
                                             <field name="days" widget="many2many_tags"/>
                                         </list>
                                     </field>
-                                </page>
-
-                                <page string="Others">
-                                    <group>
-                                    </group>
                                 </page>
                             </notebook>
                         </group>

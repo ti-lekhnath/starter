@@ -22,21 +22,21 @@ class Student(models.Model):
     email = fields.Char(string="Email", required=True)
     phone = fields.Char(string="Phone")
 
-    teacher_ids = fields.Many2many(
-        comodel_name="school.teacher",
-        string="Teachers",
-        compute="_compute_teachers_for_student",
-    )
-
     group = fields.Many2one("school.group", string="Group", required=True)
     status = fields.Selection(
-        [
+        string="Unknown",
+        selection=[
             ("unknown", "Unknown"),
             ("enrolled", "Enrolled"),
             ("graduated", "Graduated"),
             ("dropped", "Dropped"),
         ],
-        string="Unknown",
+    )
+
+    teacher_ids = fields.Many2many(
+        comodel_name="school.teacher",
+        string="Teachers",
+        compute="_compute_teachers_for_student",
     )
 
     @api.depends("group")

@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import api, models, fields
 
 
 class Teacher(models.Model):
@@ -23,3 +23,35 @@ class Teacher(models.Model):
     )
 
     partner_id = fields.Many2one("res.partner", string="Address")
+
+    student_ids = fields.Many2many(
+        comodel_name="school.student",
+        string="Students",
+        compute="_compute_teachers_for_student",
+    )
+
+    timing_ids = fields.One2many(
+        comodel_name="school.timing",
+        compute="_compute_teacher_timings",
+        string="Timings",
+    )
+
+    def _compute_teachers_for_student(self):
+        for teacher in self:
+            teacher_groups = (
+                self.env["school.timing"]
+                .search([("teacher", "=", teacher.id)])
+                .mapped("group")
+            )
+
+            teacher.student_ids = (
+                self.env["school.student"]
+                .search([("group", "in", teacher_groups.ids)])
+                .mapped("id")
+            )
+
+    def _compute_teacher_timings(self):
+        for teacher in self:
+            teacher.timing_ids = (
+                self.env["school.timing"].search([("teacher", "=", teacher.id)]).ids
+            )
