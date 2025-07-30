@@ -19,10 +19,11 @@
 
                         <group>
                             <notebook>
-                                <page string="Groups">
-                                    <group>
-                                        <field string="" name="group_ids"/>
-                                    </group>
+                                <page string="All Groups">
+                                    <field string="" name="group_ids"/>
+                                </page>
+                                <page string="Active Groups">
+                                    <field string="" name="active_group_ids"/>
                                 </page>
                             </notebook>
                         </group>
