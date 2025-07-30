@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import api, models, fields
 
 
 class Course(models.Model):
@@ -15,6 +15,11 @@ class Course(models.Model):
 
     group_ids = fields.One2many("school.group", "course", string="Groups")
 
-    def unlink(self):
-        print("hi")
-        # return super().unlink()
+
+    @api.ondelete(at_uninstall=False)
+    def _ondelete_course(self):
+        for course in self:
+            if course.group_ids:
+                raise models.ValidationError(
+                    "Cannot delete course with existing groups."
+                )
